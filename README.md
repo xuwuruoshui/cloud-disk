@@ -38,5 +38,9 @@ go run core.go -f etc/core-api.yaml
     - 文件分片上传
     - 分片上传完成
 
-
+# 其他
+- api文档
+cloud-disk.openapi.json
+- sql文件
+cloud-disk.sql
 

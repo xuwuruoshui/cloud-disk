@@ -1,0 +1,850 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "cloud-disk",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "登陆注册"
+    },
+    {
+      "name": "文件操作"
+    },
+    {
+      "name": "分享"
+    },
+    {
+      "name": "分片上传"
+    }
+  ],
+  "paths": {
+    "/user/login": {
+      "post": {
+        "summary": "1、登录",
+        "x-apifox-folder": "登陆注册",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "登陆注册"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "name": "zhangsan",
+                "password": "123456"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39108835-run"
+      }
+    },
+    "/user": {
+      "get": {
+        "summary": "2、用户详情",
+        "x-apifox-folder": "登陆注册",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "登陆注册"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "identity": "USER_1"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39113194-run"
+      }
+    },
+    "/mail/code/register": {
+      "post": {
+        "summary": "3、验证码发送",
+        "x-apifox-folder": "登陆注册",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "登陆注册"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "email": "2864758326@qq.com"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39119720-run"
+      }
+    },
+    "/user/register": {
+      "post": {
+        "summary": "4、用户注册",
+        "x-apifox-folder": "登陆注册",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "登陆注册"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "name": "test1",
+                "password": "111111",
+                "email": "2864758326@qq.com",
+                "code": "490110"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39120193-run"
+      }
+    },
+    "/file/upload": {
+      "post": {
+        "summary": "5、上传文件",
+        "x-apifox-folder": "文件操作",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "文件操作"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6MSwiSWRlbnRpdHkiOiJVU0VSXzEiLCJOYW1lIjoiemhhbmdzYW4ifQ.zGfRIBllMETjYugtNAY45uQ2JU2bMo_st5bCF1Co7zE",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "example": "file://C:\\Users\\10852\\Pictures\\bg\\bg_s.jpg",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39129232-run"
+      }
+    },
+    "/user/repository": {
+      "post": {
+        "summary": "6、用户文件关联存储",
+        "x-apifox-folder": "文件操作",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "文件操作"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6MSwiSWRlbnRpdHkiOiJVU0VSXzEiLCJOYW1lIjoiemhhbmdzYW4ifQ.zGfRIBllMETjYugtNAY45uQ2JU2bMo_st5bCF1Co7zE",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "parentId": 0,
+                "repositoryIdentity": "7285274e-a435-4e3a-b7e0-bc3ce8d13522",
+                "ext": ".jpg",
+                "name": "bg_s.jpg"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39137826-run"
+      }
+    },
+    "/user/file/list": {
+      "get": {
+        "summary": "7、获取文件列表",
+        "x-apifox-folder": "文件操作",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "文件操作"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "page": 0,
+                "size": 10
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39140095-run"
+      }
+    },
+    "/user/file/name": {
+      "patch": {
+        "summary": "8、修改文件名",
+        "x-apifox-folder": "文件操作",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "文件操作"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6MSwiSWRlbnRpdHkiOiJVU0VSXzEiLCJOYW1lIjoiemhhbmdzYW4ifQ.zGfRIBllMETjYugtNAY45uQ2JU2bMo_st5bCF1Co7zE",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "identity": "7db50e6b-712a-429d-8308-24b8874b7ca5",
+                "name": "bg222f.jpg"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39140686-run"
+      }
+    },
+    "/user/folder": {
+      "post": {
+        "summary": "9、创建文件夹",
+        "x-apifox-folder": "文件操作",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "文件操作"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "parentId": 0,
+                "name": "音乐"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39155231-run"
+      }
+    },
+    "/user/file": {
+      "delete": {
+        "summary": "10、删除文件/文件夹",
+        "x-apifox-folder": "文件操作",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "文件操作"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "identity": "5c72f9c7-6f06-4783-8d17-e57c2fbb80cf"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39157870-run"
+      }
+    },
+    "/user/file/move": {
+      "put": {
+        "summary": "11、移动文件",
+        "x-apifox-folder": "文件操作",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "文件操作"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "identity": "7db50e6b-712a-429d-8308-24b8874b7ca5",
+                "parentIdentity": "5c72f9c7-6f06-4783-8d17-e57c2fbb80cf"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39162334-run"
+      }
+    },
+    "/share/basic": {
+      "post": {
+        "summary": "12、创建分享文件",
+        "x-apifox-folder": "分享",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "分享"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apifox-ignore-properties": [],
+                "x-apifox-orders": []
+              },
+              "example": {
+                "userRepositoryIdentity": "7db50e6b-712a-429d-8308-24b8874b7ca5",
+                "expireTime": 100
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39168654-run"
+      },
+      "get": {
+        "summary": "13、分享文件",
+        "x-apifox-folder": "分享",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "分享"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apifox-ignore-properties": [],
+                "x-apifox-orders": []
+              },
+              "example": {
+                "identity": "0c669f3f-c205-4ea9-8ad9-31d720946b13"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39169327-run"
+      }
+    },
+    "/share/basic/save": {
+      "post": {
+        "summary": "14、保存分享文件",
+        "x-apifox-folder": "分享",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "分享"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apifox-ignore-properties": [],
+                "x-apifox-orders": []
+              },
+              "example": {
+                "repositoryIdentity": "7285274e-a435-4e3a-b7e0-bc3ce8d13522",
+                "parentId": 5
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39178965-run"
+      }
+    },
+    "/refresh/authorization": {
+      "get": {
+        "summary": "15、刷新token",
+        "x-apifox-folder": "登陆注册",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "登陆注册"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39185777-run"
+      }
+    },
+    "/file/upload/prepare": {
+      "post": {
+        "summary": "16、秒传/分片上传初始化",
+        "x-apifox-folder": "分片上传",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "分片上传"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apifox-ignore-properties": [],
+                "x-apifox-orders": []
+              },
+              "example": {
+                "md5": "466a540e5aa15130e90a65f03fd3f49e",
+                "name": ""
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39191170-run"
+      }
+    },
+    "/file/upload/chunk": {
+      "post": {
+        "summary": "17、文件分片上传",
+        "x-apifox-folder": "分片上传",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "分片上传"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string",
+                    "example": "cloud-disk/27050a19-e000-4a17-9fd1-54a48c0c9321.jpg"
+                  },
+                  "uploadId": {
+                    "type": "string",
+                    "example": "1663037859e660db388932869eef70576c2fe375e1dddfdcf85afddfbda90a5cdbcabd86c5"
+                  },
+                  "partNum": {
+                    "type": "string",
+                    "example": "1"
+                  },
+                  "file": {
+                    "type": "string",
+                    "example": "file://C:\\Users\\10852\\Pictures\\bg\\bg7.jpg",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39238945-run"
+      }
+    },
+    "/file/upload/chunk/complete": {
+      "post": {
+        "summary": "18、分片上传完成",
+        "x-apifox-folder": "分片上传",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "分片上传"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "x-apifox-ignore-properties": [],
+                "x-apifox-orders": []
+              },
+              "example": {
+                "uploadId": "1663037859e660db388932869eef70576c2fe375e1dddfdcf85afddfbda90a5cdbcabd86c5",
+                "key": "cloud-disk/27050a19-e000-4a17-9fd1-54a48c0c9321.jpg",
+                "cosObjects": [
+                  {
+                    "etag": "f258e9711790e2ce6638a6c754db0f34",
+                    "partNum": 1
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://www.apifox.cn/web/project/1594151/apis/api-39285093-run"
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}
